@@ -10,12 +10,18 @@ class Form extends Component {
     };
   }
 
-  handleClick = e => {
-    e.preventDefault();
-    let newTitle = this.state.title;
-    let newDescription = this.state.description;
-    let newIdea = { title: newTitle, description: newDescription };
+  submitIdea = event => {
+    event.preventDefault();
+    const newIdea = {
+      id: Date.now(),
+      ...this.state
+    };
     this.props.addIdea(newIdea);
+    console.log(newIdea)
+  };
+
+  clearInputs = () => {
+    this.setState({ title: "", description: "" });
   };
 
   handleChange = e => {
@@ -25,27 +31,31 @@ class Form extends Component {
 
   render() {
     return (
-      <form className="form">
-        <section>
-          <label for="title">Title</label>
-          <input
-            type="text"
-            name="title"
-            value={this.state.title}
-            onChange={this.handleChange}
-          />
-        </section>
-        <section>
-          <label for="description">Description</label>
-          <input
-            type="text"
-            name="description"
-            value={this.state.description}
-            onChange={this.handleChange}
-          />
-        </section>
-        <button onClick={e => this.handleClick(e)}>Submit</button>
-      </form>
+      <section className="form">
+        <form>
+          <section className="form-section">
+            <label htmlFor="title">Title</label>
+            <input
+              type="text"
+              name="title"
+              value={this.state.title}
+              onChange={this.handleChange}
+            />
+          </section>
+          <section className="form-section">
+            <label htmlFor="description">Description</label>
+            <input
+              type="text"
+              name="description"
+              value={this.state.description}
+              onChange={this.handleChange}
+            />
+          </section>
+          <section className="form-section">
+            <button onClick={e => this.submitIdea(e)}>Submit</button>
+          </section>
+        </form>
+      </section>
     );
   }
 }

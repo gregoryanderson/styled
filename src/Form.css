@@ -1,16 +1,19 @@
-.form {
-    margin: 50px;
-    display: grid;
+
+.form-section {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 20px;
 }
 
-section {
-    margin: 20px;
-}
+  input, button {
+    width: 30%;
+    border: 2px solid black;
+    font-size: 18px;
+  }
 
-label {
-    margin-right: 50px;
-}
+  button {
+      margin-left: 30%;
+  }
 
-button {
-    width: 100px;
-}

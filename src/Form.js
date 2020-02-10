@@ -17,7 +17,7 @@ class Form extends Component {
       ...this.state
     };
     this.props.addIdea(newIdea);
-    console.log(newIdea)
+    console.log(newIdea);
   };
 
   clearInputs = () => {
@@ -33,6 +33,7 @@ class Form extends Component {
     return (
       <section className="form">
         <form>
+          <h1>Content Maker</h1>
           <section className="form-section">
             <label htmlFor="title">Title</label>
             <input

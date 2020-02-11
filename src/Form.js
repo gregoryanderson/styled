@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Form.css";
+import {Title, Button} from './styles'
 
 class Form extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class Form extends Component {
     return (
       <section className="form">
         <form>
-          <h1>Content Maker</h1>
+          <Title>Content Maker</Title>
           <section className="form-section">
             <label htmlFor="title">Title</label>
             <input
@@ -53,7 +54,7 @@ class Form extends Component {
             />
           </section>
           <section className="form-section">
-            <button onClick={e => this.submitIdea(e)}>Submit</button>
+            <Button onClick={e => this.submitIdea(e)}>Submit</Button>
           </section>
         </form>
       </section>
